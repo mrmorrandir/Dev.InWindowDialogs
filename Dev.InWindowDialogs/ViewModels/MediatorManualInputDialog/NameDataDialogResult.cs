@@ -1,6 +1,6 @@
-using Dev.AsyncDialog;
+using Dev.MediatorDialog;
 
-namespace Dev.InWindowDialogs.ViewModels.AsyncManualInputDialog;
+namespace Dev.InWindowDialogs.ViewModels.MediatorManualInputDialog;
 
 public class NameDataDialogResult : IDialogVMResult<INameData>
 {

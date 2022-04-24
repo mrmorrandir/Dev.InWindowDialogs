@@ -1,6 +1,6 @@
-using Dev.AsyncDialog;
+using Dev.ThreadEventDialog;
 
-namespace Dev.InWindowDialogs.ViewModels.AsyncManualInputDialog;
+namespace Dev.InWindowDialogs.ViewModels.ThreadEventManualInputDialog;
 
 public class NameDataDialogResult : IDialogVMResult<INameData>
 {

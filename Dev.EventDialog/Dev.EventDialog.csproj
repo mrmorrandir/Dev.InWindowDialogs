@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="MLib2.MVVM, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\MLib2\MLib2\bin\Debug\netcoreapp3.1\MLib2.MVVM.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>

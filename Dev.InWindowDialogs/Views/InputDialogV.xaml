@@ -3,7 +3,8 @@
                     xmlns:vm="clr-namespace:Dev.InWindowDialogs.ViewModels"
                     xmlns:mlib="http://mlib.com/mvvm"
                     xmlns:asyncManualInputDialog="clr-namespace:Dev.InWindowDialogs.ViewModels.AsyncManualInputDialog"
-                    xmlns:eventManualInputDialog="clr-namespace:Dev.InWindowDialogs.ViewModels.EventManualInputDialog">
+                    xmlns:eventManualInputDialog="clr-namespace:Dev.InWindowDialogs.ViewModels.EventManualInputDialog"
+                    xmlns:mediatorManualInputDialog="clr-namespace:Dev.InWindowDialogs.ViewModels.MediatorManualInputDialog">
     <DataTemplate DataType="{x:Type asyncManualInputDialog:ManualInputDialogVM}">
         <mlib:Widget Header="Bitte Namen eingeben">
             <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -24,6 +25,24 @@
     
     <DataTemplate DataType="{x:Type eventManualInputDialog:ManualInputDialogVM}">
         <mlib:Widget Header="Bitte Namen eingeben" Background="Aqua">
+            <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+                    <mlib:WidgetButton Content="OK" Command="{Binding OkCommand}"/>
+                    <mlib:WidgetButton Content="Cancel" Command="{Binding CancelCommand}" />
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Text="Vorname" />
+                    <TextBox Text="{Binding FirstName}" />
+                
+                    <TextBlock Text="Nachname" />
+                    <TextBox Text="{Binding LastName}" />
+                </StackPanel>
+            </DockPanel>
+        </mlib:Widget>
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type mediatorManualInputDialog:ManualInputDialogVM}">
+        <mlib:Widget Header="Bitte Namen eingeben" Background="MediumPurple">
             <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                 <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
                     <mlib:WidgetButton Content="OK" Command="{Binding OkCommand}"/>

@@ -1,9 +1,6 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using MLib2.MVVM;
 
-namespace Dev.InWindowDialogs.ViewModels.AsyncDialog;
+namespace Dev.AsyncDialog;
 
 public interface IDialogVM<TDialogVMResultData> : IViewModelBase, IDisposable
 {

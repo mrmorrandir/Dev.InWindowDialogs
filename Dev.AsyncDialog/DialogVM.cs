@@ -1,9 +1,6 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using MLib2.MVVM;
 
-namespace Dev.InWindowDialogs.ViewModels.AsyncDialog;
+namespace Dev.AsyncDialog;
 
 /// <summary>
 /// An abstract base class to implement dialog ViewModels that are used to show dialogs in the same window (via calling ViewModel) as the caller.

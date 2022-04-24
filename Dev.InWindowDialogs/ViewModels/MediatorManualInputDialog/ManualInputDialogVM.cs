@@ -1,7 +1,8 @@
-using Dev.AsyncDialog;
+using Dev.MediatorDialog;
+using MediatR;
 using MLib2.MVVM;
 
-namespace Dev.InWindowDialogs.ViewModels.AsyncManualInputDialog;
+namespace Dev.InWindowDialogs.ViewModels.MediatorManualInputDialog;
 
 public sealed class ManualInputDialogVM : DialogVM<INameData>
 {
@@ -23,7 +24,7 @@ public sealed class ManualInputDialogVM : DialogVM<INameData>
     public DelegateCommand OkCommand { get; private set; }
     public DelegateCommand CancelCommand { get; private set; }
     
-    public ManualInputDialogVM()
+    public ManualInputDialogVM(IMediator mediator) : base(mediator)
     {
         CreateCommandBinding();
     }

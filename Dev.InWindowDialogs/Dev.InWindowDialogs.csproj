@@ -50,4 +50,11 @@
       <PackageReference Include="NLog.Extensions.Logging" Version="5.0.0-rc2" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Dev.AsyncDialog\Dev.AsyncDialog.csproj" />
+      <ProjectReference Include="..\Dev.EventDialog\Dev.EventDialog.csproj" />
+      <ProjectReference Include="..\Dev.MediatorDialog\Dev.MediatorDialog.csproj" />
+      <ProjectReference Include="..\Dev.ThreadEventDialog\Dev.ThreadEventDialog.csproj" />
+    </ItemGroup>
+
 </Project>

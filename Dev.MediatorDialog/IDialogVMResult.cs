@@ -1,4 +1,4 @@
-namespace Dev.InWindowDialogs.ViewModels.AsyncDialog;
+namespace Dev.MediatorDialog;
 
 public interface IDialogVMResult<out TDialogVMResultData>
 {

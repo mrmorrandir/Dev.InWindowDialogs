@@ -1,4 +1,4 @@
-using Dev.InWindowDialogs.ViewModels.EventDialog;
+using Dev.EventDialog;
 using MLib2.MVVM;
 
 namespace Dev.InWindowDialogs.ViewModels.EventManualInputDialog;

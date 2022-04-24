@@ -1,4 +1,4 @@
-using Dev.InWindowDialogs.ViewModels.AsyncDialog;
+using Dev.AsyncDialog;
 
 namespace Dev.InWindowDialogs.ViewModels.AsyncManualInputDialog;
 

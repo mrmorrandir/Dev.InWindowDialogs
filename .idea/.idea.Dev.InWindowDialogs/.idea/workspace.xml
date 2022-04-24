@@ -13,6 +13,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../MLib2/MLib2.MVVM/DelegateCommand[T].cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../MLib2/MLib2.MVVM/AsyncCommand[T].cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/225dd19ef9e59a5b94de2bcd4b7b38cdca205bdfea4a7361ed03c5f79a36/INotification.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5939cc1db917894f431a56f3c68e6bef1ade5c56e1cc94de5f14d5305d7e2af3/InvalidOperationException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6cc61778714bb444446f99fef3adfe4f3dbf9bfefae791ea63f68d499abf30/RuntimePropertyInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../MLib2/MLib2.MVVM/DelegateCommand.cs" root0="SKIP_HIGHLIGHTING" />
@@ -68,7 +69,7 @@
       <updated>1650688967630</updated>
       <workItem from="1650688975029" duration="14533000" />
       <workItem from="1650704370345" duration="4416000" />
-      <workItem from="1650786159499" duration="6675000" />
+      <workItem from="1650786159499" duration="16303000" />
     </task>
     <servers />
   </component>

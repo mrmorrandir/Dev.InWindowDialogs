@@ -1,7 +1,7 @@
-using Dev.AsyncDialog;
+using Dev.ThreadEventDialog;
 using MLib2.MVVM;
 
-namespace Dev.InWindowDialogs.ViewModels.AsyncManualInputDialog;
+namespace Dev.InWindowDialogs.ViewModels.ThreadEventManualInputDialog;
 
 public sealed class ManualInputDialogVM : DialogVM<INameData>
 {

@@ -12,15 +12,24 @@
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="Programm">
                     
-                    <TextBlock Text="Async Dialog" />
+                    <TextBlock Text="Async Dialog"  Background="LightBlue"/>
                     <Separator/>
                     <MenuItem Header="Start" Command="{Binding StartAsyncDialogAsyncCommand}"/>
                     <MenuItem Header="Stop" Command="{Binding StopAsyncDialogCommand}"/>
                     
-                    <TextBlock Text="Event Dialog" />
+                    <TextBlock Text="Event Dialog"  Background="LightBlue"/>
                     <Separator/>
                     <MenuItem Header="Start" Command="{Binding StartEventDialogCommand}" />
                     <MenuItem Header="Stop" Command="{Binding StopEventDialogCommand}" />
+                    
+                    <TextBlock Text="Thread Event Dialog" Background="LightBlue" />
+                    <Separator/>
+                    <MenuItem Header="Start" Command="{Binding StartThreadEventDialogCommand}" />
+                    <MenuItem Header="Stop" Command="{Binding StopThreadEventDialogCommand}" />
+                    
+                    <TextBlock Text="Thread Event Dialog" Background="LightBlue"/>
+                    <Separator/>
+                    <MenuItem Header="Start" Command="{Binding StartMediatorDialogCommand}" />
                     <Separator />
                     <MenuItem Header="Beenden" Command="{Binding ExitCommand}"/>
                 </MenuItem>
