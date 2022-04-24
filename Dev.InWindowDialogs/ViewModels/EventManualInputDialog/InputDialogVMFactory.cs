@@ -1,4 +1,6 @@
-namespace Dev.InWindowDialogs.ViewModels;
+using Dev.InWindowDialogs.ViewModels.EventDialog;
+
+namespace Dev.InWindowDialogs.ViewModels.EventManualInputDialog;
 
 public class InputDialogVMFactory : IInputDialogVMFactory
 {

@@ -1,4 +1,4 @@
-namespace Dev.InWindowDialogs.ViewModels;
+namespace Dev.InWindowDialogs.ViewModels.AsyncDialog;
 
 public interface IDialogVMFactory<TDialogVMResultData> 
 {

@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MLib2.MVVM;
 
-namespace Dev.InWindowDialogs.ViewModels;
+namespace Dev.InWindowDialogs.ViewModels.AsyncDialog;
 
 /// <summary>
 /// An abstract base class to implement dialog ViewModels that are used to show dialogs in the same window (via calling ViewModel) as the caller.
@@ -11,15 +11,14 @@ namespace Dev.InWindowDialogs.ViewModels;
 /// <typeparam name="TDialogVMResultData">The return type of the data returned by the dialog. <seealso cref="IDialogVMResult{TDialogVMResultData}"/></typeparam>
 public abstract class DialogVM<TDialogVMResultData> : ViewModelBase, IDialogVM<TDialogVMResultData>
 {
-    private CancellationTokenSource? _cancellationTokenSource;
-    private CancellationTokenSource? _linkedTokenSource;
+    private TaskCompletionSource<IDialogVMResult<TDialogVMResultData>>? _taskCompletionSource;
     private IDialogVMResult<TDialogVMResultData> _dialogResult = new DefaultDialogResult();
     private bool _isShown = false;
 
     protected void SetDialogResult(IDialogVMResult<TDialogVMResultData> dialogResult)
     {
         _dialogResult = dialogResult;
-        _cancellationTokenSource?.Cancel();
+        _taskCompletionSource?.TrySetResult(_dialogResult);
     }
     
     /// <summary>
@@ -46,40 +45,28 @@ public abstract class DialogVM<TDialogVMResultData> : ViewModelBase, IDialogVM<T
     /// <returns>A dialog result object</returns>
     /// <exception cref="InvalidOperationException"></exception>
     /// <exception cref="TaskCanceledException"></exception>
-    public async Task<IDialogVMResult<TDialogVMResultData>> ShowDialogResultAsync(Func<IDialogVM<TDialogVMResultData>, Task> showAsync, CancellationToken cancellationToken = default)
+    public async Task<IDialogVMResult<TDialogVMResultData>> ShowDialogResultAsync(
+        Func<IDialogVM<TDialogVMResultData>, Task> showAsync, CancellationToken cancellationToken = default)
     {
         if (_isShown)
             throw new InvalidOperationException("The dialog is already shown.");
         _isShown = true;
-        _cancellationTokenSource = new CancellationTokenSource();
-        _linkedTokenSource = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, _cancellationTokenSource.Token);
+        _taskCompletionSource = new TaskCompletionSource<IDialogVMResult<TDialogVMResultData>>();
+        cancellationToken.Register((o, token) => _taskCompletionSource.SetCanceled(token), null);
         try
         {
             await showAsync(this);
-            await Task.Delay(-1, _linkedTokenSource.Token);
-        }
-        catch (TaskCanceledException)
-        {
-            if (cancellationToken.IsCancellationRequested)
-                throw;
+            return await _taskCompletionSource.Task;
         }
         finally
         {
-            _linkedTokenSource.Dispose();
-            _linkedTokenSource = null;
-            _cancellationTokenSource.Dispose();
-            _cancellationTokenSource = null;
             _isShown = false;
         }
-
-        return _dialogResult;
     }
 
     protected virtual void Dispose(bool disposing)
     {
         if (!disposing) return;
-        _cancellationTokenSource?.Dispose();
-        _linkedTokenSource?.Dispose();
     }
 
     public void Dispose()

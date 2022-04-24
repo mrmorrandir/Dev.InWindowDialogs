@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MLib2.MVVM;
 
-namespace Dev.InWindowDialogs.ViewModels;
+namespace Dev.InWindowDialogs.ViewModels.AsyncDialog;
 
 public interface IDialogVM<TDialogVMResultData> : IViewModelBase, IDisposable
 {

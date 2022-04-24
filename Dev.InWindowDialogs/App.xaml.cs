@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using Dev.InWindowDialogs.ViewModels;
+using Dev.InWindowDialogs.ViewModels.AsyncManualInputDialog;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -26,6 +27,9 @@ namespace Dev.InWindowDialogs
                 .ConfigureServices(services =>
                 {
                     services.AddSingleton<IInputDialogVMFactory, InputDialogVMFactory>();
+                    services
+                        .AddSingleton<Dev.InWindowDialogs.ViewModels.EventManualInputDialog.IInputDialogVMFactory,
+                            ViewModels.EventManualInputDialog.InputDialogVMFactory>();
                     services.AddSingleton<IWelcomeScreen, WelcomeScreenVM>();
                     services.AddSingleton<MainWindowVM>();
                 })

@@ -11,8 +11,17 @@
     <DockPanel>
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="Programm">
-                    <MenuItem Header="Start" Command="{Binding StartAsyncCommand}"/>
-                    <MenuItem Header="Stop" Command="{Binding StopCommand}"/>
+                    
+                    <TextBlock Text="Async Dialog" />
+                    <Separator/>
+                    <MenuItem Header="Start" Command="{Binding StartAsyncDialogAsyncCommand}"/>
+                    <MenuItem Header="Stop" Command="{Binding StopAsyncDialogCommand}"/>
+                    
+                    <TextBlock Text="Event Dialog" />
+                    <Separator/>
+                    <MenuItem Header="Start" Command="{Binding StartEventDialogCommand}" />
+                    <MenuItem Header="Stop" Command="{Binding StopEventDialogCommand}" />
+                    <Separator />
                     <MenuItem Header="Beenden" Command="{Binding ExitCommand}"/>
                 </MenuItem>
             </Menu>

@@ -1,6 +1,7 @@
+using Dev.InWindowDialogs.ViewModels.EventDialog;
 using MLib2.MVVM;
 
-namespace Dev.InWindowDialogs.ViewModels;
+namespace Dev.InWindowDialogs.ViewModels.EventManualInputDialog;
 
 public sealed class ManualInputDialogVM : DialogVM<INameData>
 {
@@ -29,11 +30,11 @@ public sealed class ManualInputDialogVM : DialogVM<INameData>
 
     public void Ok(object o)
     {
-        SetDialogResult(new NameDataDialogResult(true,new NameData(_firstName, _lastName)));
+        Finish(new NameDataDialogResult(true, new NameData(_firstName, _lastName)));
     }
 
     public void Cancel(object o)
     {
-        SetDialogResult(new NameDataDialogResult(false, null));
+        Finish(new NameDataDialogResult(false, null));
     }
 }
