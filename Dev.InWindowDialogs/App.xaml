@@ -1,0 +1,13 @@
+﻿<Application x:Class="Dev.InWindowDialogs.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Dev.InWindowDialogs">
+    <Application.Resources>
+         <ResourceDictionary>
+             <ResourceDictionary.MergedDictionaries>
+                 <SharedResourceDictionary Source="Views/InputDialogV.xaml" />
+                 <SharedResourceDictionary Source="Views/WelcomeScreenV.xaml" />
+             </ResourceDictionary.MergedDictionaries>
+         </ResourceDictionary>
+    </Application.Resources>
+</Application>

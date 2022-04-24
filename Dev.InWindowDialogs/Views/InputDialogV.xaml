@@ -1,0 +1,22 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:Dev.InWindowDialogs.ViewModels"
+                    xmlns:mlib="http://mlib.com/mvvm">
+    <DataTemplate DataType="{x:Type vm:ManualInputDialogVM}">
+        <mlib:Widget Header="Bitte Namen eingeben">
+            <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+                    <mlib:WidgetButton Content="OK" Command="{Binding OkCommand}"/>
+                    <mlib:WidgetButton Content="Cancel" Command="{Binding CancelCommand}" />
+                </StackPanel>
+                <StackPanel>
+                <TextBlock Text="Vorname" />
+                <TextBox Text="{Binding FirstName}" />
+                
+                <TextBlock Text="Nachname" />
+                <TextBox Text="{Binding LastName}" />
+            </StackPanel>
+            </DockPanel>
+        </mlib:Widget>
+    </DataTemplate>
+</ResourceDictionary>

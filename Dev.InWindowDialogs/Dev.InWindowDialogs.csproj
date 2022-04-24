@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Models" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="MLib2, Version=1.0.5.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\MLib2\MLib2\bin\Debug\netcoreapp3.1\MLib2.dll</HintPath>
+      </Reference>
+      <Reference Include="MLib2.MVVM, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\MLib2\MLib2\bin\Debug\netcoreapp3.1\MLib2.MVVM.dll</HintPath>
+      </Reference>
+      <Reference Include="MLib2.MVVM.Localization, Version=1.0.3.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\MLib2\MLib2\bin\Debug\netcoreapp3.1\MLib2.MVVM.Localization.dll</HintPath>
+      </Reference>
+      <Reference Include="MLib2.MVVM.WPF, Version=1.0.3.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\MLib2\MLib2\bin\Debug\netcoreapp3.1\MLib2.MVVM.WPF.dll</HintPath>
+      </Reference>
+      <Reference Include="MLib2.MVVM.WPF.Controls, Version=1.0.3.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\MLib2\MLib2\bin\Debug\netcoreapp3.1\MLib2.MVVM.WPF.Controls.dll</HintPath>
+      </Reference>
+      <Reference Include="MLib2.MVVM.WPF.Controls.InfoControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\MLib2\MLib2\bin\Debug\netcoreapp3.1\MLib2.MVVM.WPF.Controls.InfoControls.dll</HintPath>
+      </Reference>
+      <Reference Include="MLib2.MVVM.WPF.Converters, Version=1.0.3.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\MLib2\MLib2\bin\Debug\netcoreapp3.1\MLib2.MVVM.WPF.Converters.dll</HintPath>
+      </Reference>
+      <Reference Include="MLib2.MVVM.WPF.Localization, Version=1.0.3.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\MLib2\MLib2\bin\Debug\netcoreapp3.1\MLib2.MVVM.WPF.Localization.dll</HintPath>
+      </Reference>
+      <Reference Include="MLib2.Reactive, Version=1.0.3.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\MLib2\MLib2\bin\Debug\netcoreapp3.1\MLib2.Reactive.dll</HintPath>
+      </Reference>
+      <Reference Include="System.Reactive, Version=5.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263">
+        <HintPath>..\..\MLib2\MLib2\bin\Debug\netcoreapp3.1\System.Reactive.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0-preview.3.22175.4" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0-preview.3.22175.4" />
+      <PackageReference Include="NLog.Extensions.Logging" Version="5.0.0-rc2" />
+    </ItemGroup>
+
+</Project>
